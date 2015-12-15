@@ -1,6 +1,7 @@
 {
   "name": "mrmagnet",
   "version": "1.0.0",
+  "private": true,
   "description": "Yet another torrent client for Windows, Mac and Linux",
   "main": "main.js",
   "scripts": {
@@ -10,5 +11,10 @@
   "license": "MIT",
   "devDependencies": {
     "electron-prebuilt": "^0.36.0"
+  },
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-route": "^1.4.8",
+    "snapsvg": "^0.4.0"
   }
 }

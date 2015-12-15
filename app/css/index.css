@@ -1,0 +1,40 @@
+html,
+body {
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+    background: #383F4A;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+[ng-cloak] {
+    display: none;
+}
+
+.container {
+    padding: 20px;
+}
+
+.top-panel > div {
+    float: left;
+}
+
+.top-panel .btn {
+    margin-right: 30px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.green {
+    color: #91D66E;
+}
+
+.yellow {
+    color: #FDC04D;
+}
+
+.red {
+    color: #FC625D;
+}
