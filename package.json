@@ -1,0 +1,11 @@
+{
+  "name": "mrmagnet",
+  "version": "1.0.0",
+  "description": "Yet another torrent client for Windows, Mac and Linux",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Valery Lyatsevich",
+  "license": "MIT"
+}
