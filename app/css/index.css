@@ -7,12 +7,20 @@ body {
     font-size: 14px;
 }
 
+body {
+    cursor: default;
+}
+
 [ng-cloak] {
     display: none;
 }
 
 .container {
     padding: 20px;
+}
+
+.top-panel {
+    height: 56px;
 }
 
 .top-panel > div {
@@ -47,4 +55,86 @@ body {
 
 .red {
     color: #FC625D;
+}
+
+.blue {
+    color: #4A90E2;
+}
+
+.file-list {
+    background: #323A45;
+    border-top: 1px solid #757C89;
+    border-left: 1px solid #757C89;
+    border-right: 1px solid #757C89;
+    height: 100%;
+}
+
+.file {
+    padding: 10px;
+    border-bottom: 1px solid #757C89;
+}
+
+.progress {
+    float: left;
+    margin-right: 10px;
+    position: relative;
+}
+
+.progress .percent {
+    width: 40px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-top: -8px;
+    margin-left: -20px;
+    text-align: center;
+    position: absolute;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.info {
+    height: 100px;
+}
+
+.info h2 {
+    font-size: 18px;
+    color: #E9ECF1;
+    line-height: 22px;
+    margin-top: 10px;
+    float: left;
+}
+
+.info .size {
+    margin-left: 10px;
+    font-size: 12px;
+    margin-top: 10px;
+    border: 1px solid #91D66E;
+    border-radius: 2px;
+    float: right;
+    padding: 5px 10px;
+}
+
+.info .speed {
+    float: left;
+    margin-top: 30px;
+}
+
+.info .speed .upload {
+    float: left;
+    margin-right: 30px;
+}
+
+.info .speed .download {
+    float: left;
+}
+.info .speed img {
+    float: left;
+    margin-right: 10px;
+}
+
+.info .speed p {
+    float: left;
+    font-size: 12px;
+    line-height: 26px;
 }
