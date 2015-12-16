@@ -23,6 +23,16 @@ body {
     margin-right: 30px;
 }
 
+.top-panel .btn > p {
+    float: left;
+    line-height: 36px;
+}
+
+.top-panel .btn > div {
+    float: left;
+    margin-right: 10px;
+}
+
 .uppercase {
     text-transform: uppercase;
 }
