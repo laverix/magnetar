@@ -15,31 +15,7 @@ body {
     display: none;
 }
 
-.container {
-    padding: 20px;
-}
-
-.top-panel {
-    height: 56px;
-}
-
-.top-panel > div {
-    float: left;
-}
-
-.top-panel .btn {
-    margin-right: 30px;
-}
-
-.top-panel .btn > p {
-    float: left;
-    line-height: 36px;
-}
-
-.top-panel .btn > div {
-    float: left;
-    margin-right: 10px;
-}
+/* Helpers */
 
 .uppercase {
     text-transform: uppercase;
@@ -61,23 +37,56 @@ body {
     color: #4A90E2;
 }
 
+/* Top Panel */
+
+.top-panel {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.top-panel .btn {
+    float: left;
+}
+
+.top-panel .btn {
+    margin-right: 30px;
+}
+
+.top-panel .btn > p {
+    float: left;
+    line-height: 36px;
+}
+
+.top-panel .btn > div {
+    float: left;
+    margin-right: 10px;
+}
+
+/* File list */
+
 .file-list {
     background: #323A45;
     border-top: 1px solid #757C89;
     border-left: 1px solid #757C89;
     border-right: 1px solid #757C89;
-    height: 100%;
+    border-bottom: 1px solid #757C89;
+    margin: 10px;
 }
+
 
 .file {
     padding: 10px;
+    position: relative;
+}
+
+.file:not(:last-child) {
     border-bottom: 1px solid #757C89;
 }
 
 .progress {
-    float: left;
-    margin-right: 10px;
     position: relative;
+    width: 100px;
+    height: 100px;
 }
 
 .progress .percent {
@@ -93,48 +102,54 @@ body {
     line-height: 16px;
 }
 
-.info {
-    height: 100px;
-}
-
-.info h2 {
+.file h2 {
     font-size: 18px;
     color: #E9ECF1;
     line-height: 22px;
     margin-top: 10px;
-    float: left;
 }
 
-.info .size {
-    margin-left: 10px;
+.file .size {
     font-size: 12px;
-    margin-top: 10px;
     border: 1px solid #91D66E;
     border-radius: 2px;
-    float: right;
     padding: 5px 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
-.info .speed {
+.file .speed {
     float: left;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
-.info .speed .upload {
+.file .speed .upload {
     float: left;
     margin-right: 30px;
 }
 
-.info .speed .download {
+.file .speed .download {
     float: left;
 }
-.info .speed img {
+
+.file .speed p {
+    float: left;
+    font-size: 12px;
+    line-height: 26px;
+}
+
+.file .speed img {
     float: left;
     margin-right: 10px;
 }
 
-.info .speed p {
+.controls {
+    float: right;
+    margin-top: 20px;
+}
+
+.controls .btn {
     float: left;
-    font-size: 12px;
-    line-height: 26px;
+    margin-left: 20px;
 }

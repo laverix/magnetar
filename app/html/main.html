@@ -1,26 +1,81 @@
-<div class="top-panel">
-    <div class="btn green uppercase">
-        <div draw-button data-icon="add" id="top-panel-add-file"></div>
-        <p>Torrent</p>
+<div class="grid grid-pad top-panel">
+    <div class="col-7-12">
+        <div class="content">
+            <div class="btn green uppercase">
+                <div draw-button data-icon="add" id="top-panel-add-file"></div>
+                <p>Torrent</p>
+            </div>
+            <div class="btn red uppercase">
+                <div draw-button data-icon="add-red" id="top-panel-add-magnet"></div>
+                <p>Magnet</p>
+            </div>
+            <div class="btn yellow uppercase">
+                <div draw-button data-icon="pause" id="top-panel-pause"></div>
+                <p>Pause</p>
+            </div>
+        </div>
     </div>
-    <div class="btn red uppercase">
-        <div draw-button data-icon="add-red" id="top-panel-add-magnet"></div>
-        <p>Magnet</p>
-    </div>
-    <div class="btn yellow uppercase">
-        <div draw-button data-icon="pause" id="top-panel-pause"></div>
-        <p>Pause</p>
+    <div class="col-5-12">
+        <div class="content red">
+            Mr. Magnet
+        </div>
     </div>
 </div>
 
+
 <div class="file-list">
-    <div class="file">
-        <div class="progress">
-            <p class="percent red">100%</p>
-            <img src="svg/progress.svg" alt=""/>
+    <div class="grid grid-pad file">
+        <div class="col-2-12">
+            <div class="content">
+                <div class="progress">
+                    <p class="percent red">100%</p>
+                    <img src="svg/progress.svg" alt=""/>
+                </div>
+            </div>
         </div>
-        <div class="info">
-            <h2>MUTEMATH - Vitals (Limited Edition) - 2015 (320 kbps)</h2>
+        <div class="col-10-12">
+            <h2>
+                MUTEMATH - Vitals (Limited Edition) - 2015 (320 kbps)
+            </h2>
+            <div class="size green">
+                14 GB
+            </div>
+            <div class="speed">
+                <div class="upload">
+                    <img src="svg/upload.svg" alt=""/>
+                    <p class="red">12.5 KB/s</p>
+                </div>
+                <div class="download">
+                    <img src="svg/download.svg" alt=""/>
+                    <p class="blue">12.5 KB/s</p>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="btn">
+                    <img src="svg/pause-blue.svg">
+                </div>
+                <div class="btn">
+                    <img src="svg/folder.svg">
+                </div>
+                <div class="btn">
+                    <img src="svg/minus.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid grid-pad file">
+        <div class="col-2-12">
+            <div class="content">
+                <div class="progress">
+                    <p class="percent green">100%</p>
+                    <img src="svg/progress.svg" alt=""/>
+                </div>
+            </div>
+        </div>
+        <div class="col-10-12">
+            <h2>
+                Pink Floyd - The Dark Side Of The Moon [TOCP-8794] - 1973
+            </h2>
             <div class="size green">
                 14 GB
             </div>

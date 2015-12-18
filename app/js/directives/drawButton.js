@@ -14,7 +14,7 @@ angular.module('mrmagnet').directive('drawButton', function () {
             importButon(element);
 
             element.bind('click', function () {
-                element.html('You clicked me!');
+                element.html('OK');
             });
 
 /*
