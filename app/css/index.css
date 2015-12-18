@@ -1,10 +1,13 @@
 html,
 body {
-    -webkit-app-region: drag;
-    -webkit-user-select: none;
     background: #383F4A;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
+}
+
+* {
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
 }
 
 body {
@@ -37,6 +40,14 @@ body {
     color: #4A90E2;
 }
 
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 /* Top Panel */
 
 .top-panel {
@@ -57,9 +68,24 @@ body {
     line-height: 36px;
 }
 
-.top-panel .btn > div {
+.top-panel .btn > img {
     float: left;
     margin-right: 10px;
+}
+
+#magnet-field {
+    margin-top: 10px;
+    height: 40px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #757C89;
+    color: #E9ECF1;
+    font-size: 12px;
+}
+
+*:focus {
+    outline: 0;
 }
 
 /* File list */

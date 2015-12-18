@@ -1,16 +1,16 @@
 <div class="grid grid-pad top-panel">
     <div class="col-7-12">
         <div class="content">
-            <div class="btn green uppercase">
-                <div draw-button data-icon="add" id="top-panel-add-file"></div>
+            <div class="btn green uppercase" ng-click="showTorrentDialog($event)">
+                <img src="svg/add.svg" id="top-panel-add-file"/>
                 <p>Torrent</p>
             </div>
-            <div class="btn red uppercase">
-                <div draw-button data-icon="add-red" id="top-panel-add-magnet"></div>
+            <div class="btn red uppercase" ng-click="showMagnetField($event)">
+                <img src="svg/add-red.svg" id="top-panel-add-magnet"/>
                 <p>Magnet</p>
             </div>
             <div class="btn yellow uppercase">
-                <div draw-button data-icon="pause" id="top-panel-pause"></div>
+                <img src="svg/pause.svg" id="top-panel-pause"/>
                 <p>Pause</p>
             </div>
         </div>
@@ -20,8 +20,16 @@
             Mr. Magnet
         </div>
     </div>
+    <div class="col-1-1 magnet-panel hide">
+        <div class="content red">
+            <input type="text"
+                   ng-model="magnetUrl"
+                   ng-paste="applyMagnetUrl($event)"
+                   id="magnet-field"
+                   placeholder="Paste magnet url here"/>
+        </div>
+    </div>
 </div>
-
 
 <div class="file-list">
     <div class="grid grid-pad file">
