@@ -18,6 +18,14 @@ body {
     display: none;
 }
 
+.btn {
+    transition: opacity .10s ease-in-out;
+}
+
+.btn:hover {
+    opacity: 0.5;
+}
+
 /* Helpers */
 
 .uppercase {
