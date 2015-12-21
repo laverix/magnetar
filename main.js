@@ -20,7 +20,3 @@ app.on('ready', function() {
 
     mainWindow.openDevTools();
 });
-
-ipc.on('choose-torrent-file', function () {
-    dialog.showOpenDialog();
-});

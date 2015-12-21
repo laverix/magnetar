@@ -8,12 +8,17 @@ angular.module('mrmagnet').factory('webtorrentService', function ($http, $inject
         return client.add(magnetUrl);
     }
 
-    function getTorrents () {
+    function getAllTorrents () {
         return client.torrents;
+    }
+
+    function seedingFiles (file) {
+        return client.seed(file);
     }
 
     return {
         addMagnet: addMagnet,
-        getTorrents: getTorrents
+        getAllTorrents: getAllTorrents,
+        seedingFiles: seedingFiles
     }
 });

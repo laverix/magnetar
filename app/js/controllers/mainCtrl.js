@@ -1,13 +1,19 @@
-angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, webtorrentService) {
+angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, $interval, webtorrentService) {
     'use strict';
 
     var ipc = require('electron').ipcRenderer;
+    var remote = require('electron').remote;
 
-    $scope.getTorrents = function () {
-        webtorrentService.getTorrents();
+    var dialog = remote.dialog;
+
+    /**
+     * @TODO: show all torrents
+     */
+    function getTorrents () {
+        $scope.torrents = webtorrentService.getAllTorrents();
     }
 
-    $scope.getTorrents();
+    getTorrents();
 
     $scope.showMagnetField = function () {
         var magnetPanel = document.querySelector('.magnet-panel');
@@ -19,7 +25,19 @@ angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, web
     }
 
     $scope.showTorrentDialog = function () {
-        ipc.send('choose-torrent-file');
+        var settings = {
+            properties: ['openFile'],
+            filters: [{
+                name: 'Torrents',
+                extensions: ['torrent']
+            }]
+        };
+
+        dialog.showOpenDialog(settings, function (file) {
+            webtorrentService.seedingFiles(file);
+
+            getTorrents();
+        });
     };
 
     /**
@@ -29,6 +47,6 @@ angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, web
     $scope.applyMagnetUrl = function (event) {
         webtorrentService.addMagnet($scope.magnetUrl);
 
-        $scope.getTorrents();
+        getTorrents();
     }
 });
