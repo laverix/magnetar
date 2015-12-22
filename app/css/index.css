@@ -28,6 +28,10 @@ body {
 
 /* Helpers */
 
+.center  {
+    text-align: center;
+}
+
 .uppercase {
     text-transform: uppercase;
 }
@@ -186,4 +190,8 @@ body {
 .controls .btn {
     float: left;
     margin-left: 20px;
+}
+
+.no-data {
+    margin-bottom: 10px;
 }
