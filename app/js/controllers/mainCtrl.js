@@ -1,4 +1,4 @@
-angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, $interval, webtorrentService) {
+angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, webtorrentService) {
     'use strict';
 
     var ipc = require('electron').ipcRenderer;
@@ -6,11 +6,13 @@ angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, $in
 
     var dialog = remote.dialog;
 
+    $scope.files = [];
+
     /**
-     * @TODO: show all torrents
+     * @TODO: show all torrents / Fix circular links in object
      */
     function getTorrents () {
-        $scope.torrents = webtorrentService.getAllTorrents();
+        $scope.files = webtorrentService.getAllTorrents();
     }
 
     getTorrents();
