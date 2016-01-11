@@ -1,4 +1,4 @@
-angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, $interval, webtorrentService, bytesFilter) {
+angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, $interval, webtorrentService) {
     'use strict';
 
     var ipc = require('electron').ipcRenderer;
@@ -8,9 +8,6 @@ angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, $in
 
     $scope.files = [];
 
-    /**
-     * @TODO: show all torrents / Fix circular links in object
-     */
     function getTorrents () {
         if (webtorrentService.getAllTorrents().length) {
             $scope.files = [];
@@ -25,6 +22,9 @@ angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, $in
                 metadata.name = torrent.name;
                 metadata.downloadSpeed = torrent.downloadSpeed;
                 metadata.uploadSpeed = torrent.uploadSpeed;
+                metadata.progress = torrent.progress;
+                metadata.infoHash = torrent.infoHash;
+                metadata.timeRemaining = torrent.timeRemaining;
 
                 $scope.files.push(metadata);
             });

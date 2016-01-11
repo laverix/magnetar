@@ -38,12 +38,28 @@
         </h2>
     </div>
 
-    <div ng-if="files.length !== 0" class="grid grid-pad file" ng-repeat="file in files track by $index">
+    <div ng-if="files.length !== 0" class="grid grid-pad file"
+         ng-repeat="file in files track by $index">
         <div class="col-2-12">
             <div class="content">
                 <div class="progress">
-                    <p class="percent red">100%</p>
-                    <img src="svg/progress.svg" alt=""/>
+                    <p class="percent yellow">
+                        {{ file.progress | percentage : 0 }}
+                    </p>
+                    <div round-progress
+                         max="1"
+                         current="file.progress"
+                         color="#FDBE41"
+                         bgcolor="#535A66"
+                         radius="50"
+                         stroke="6"
+                         semi="false"
+                         rounded="false"
+                         clockwise="true"
+                         responsive="false"
+                         duration="800"
+                         animation="easeInSine"
+                         animation-delay="0"></div>
                 </div>
             </div>
         </div>
