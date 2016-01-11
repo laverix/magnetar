@@ -1,4 +1,4 @@
-angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, webtorrentService) {
+angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, $interval, webtorrentService) {
     'use strict';
 
     var ipc = require('electron').ipcRenderer;
@@ -12,10 +12,49 @@ angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, web
      * @TODO: show all torrents / Fix circular links in object
      */
     function getTorrents () {
-        $scope.files = webtorrentService.getAllTorrents();
+        if (webtorrentService.getAllTorrents().length) {
+            $scope.files = [];
+
+            angular.forEach(webtorrentService.getAllTorrents(), function (torrent) {
+                if (torrent.infoHash === undefined) {
+                    return;
+                }
+                console.log(
+                    torrent.downloadSpeed()
+                );
+
+                $scope.files.push(
+                    JSON.parse(simpleStringify(torrent))
+                );
+            });
+        }
     }
 
-    getTorrents();
+    $interval(function () {
+        getTorrents();
+    }, 1000);
+
+    function simpleStringify (object) {
+        var simpleObject = {};
+
+        for (var prop in object) {
+            if (!object.hasOwnProperty(prop)) {
+                continue;
+            }
+
+            if (typeof(object[prop]) == 'object') {
+                continue;
+            }
+
+            if (typeof(object[prop]) == 'function') {
+                continue;
+            }
+
+            simpleObject[prop] = object[prop];
+        }
+
+        return JSON.stringify(simpleObject);
+    }
 
     $scope.showMagnetField = function () {
         var magnetPanel = document.querySelector('.magnet-panel');
@@ -24,7 +63,7 @@ angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, web
         magnetPanel.classList.remove('hide');
 
         magnetField.setAttribute('autofocus', true);
-    }
+    };
 
     $scope.showTorrentDialog = function () {
         var settings = {
@@ -36,9 +75,9 @@ angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, web
         };
 
         dialog.showOpenDialog(settings, function (file) {
-            webtorrentService.seedingFiles(file);
-
-            getTorrents();
+            webtorrentService.seedingFiles(file, function (torrent) {
+                getTorrents();
+            });
         });
     };
 
@@ -47,8 +86,8 @@ angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, web
      * #TODO: Implement callback
      */
     $scope.applyMagnetUrl = function (event) {
-        webtorrentService.addMagnet($scope.magnetUrl);
-
-        getTorrents();
+        webtorrentService.addMagnet($scope.magnetUrl, function () {
+            getTorrents();
+        });
     }
 });

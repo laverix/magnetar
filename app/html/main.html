@@ -38,8 +38,7 @@
         </h2>
     </div>
 
-    <div ng-if="files.length !== 0" class="grid grid-pad file" ng-repeat="file in files">
-        {{ file }}
+    <div ng-if="files.length !== 0" class="grid grid-pad file" ng-repeat="file in files track by $index">
         <div class="col-2-12">
             <div class="content">
                 <div class="progress">
@@ -50,8 +49,9 @@
         </div>
         <div class="col-10-12">
             <h2>
-                MUTEMATH - Vitals (Limited Edition) - 2015 (320 kbps)
+                {{ file.name }}
             </h2>
+            {{ file }}
             <div class="size green">
                 14 GB
             </div>

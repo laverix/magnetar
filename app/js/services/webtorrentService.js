@@ -12,8 +12,8 @@ angular.module('mrmagnet').factory('webtorrentService', function ($http, $inject
         return client.torrents;
     }
 
-    function seedingFiles (file) {
-        return client.seed(file);
+    function seedingFiles (file, callback) {
+        return client.seed(file, callback);
     }
 
     return {
