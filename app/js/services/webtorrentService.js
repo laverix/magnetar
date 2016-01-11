@@ -4,8 +4,10 @@ angular.module('mrmagnet').factory('webtorrentService', function ($http, $inject
     var WebTorrent = require('webtorrent');
     var client = new WebTorrent();
 
-    function addMagnet (magnetUrl) {
-        return client.add(magnetUrl);
+    function addMagnet (magnetUrl, callback) {
+        return client.add(magnetUrl, function () {
+            callback.apply();
+        });
     }
 
     function getAllTorrents () {

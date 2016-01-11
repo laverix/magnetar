@@ -1,4 +1,4 @@
-angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, $interval, webtorrentService) {
+angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, $interval, webtorrentService, bytesFilter) {
     'use strict';
 
     var ipc = require('electron').ipcRenderer;
@@ -16,44 +16,19 @@ angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, $in
             $scope.files = [];
 
             angular.forEach(webtorrentService.getAllTorrents(), function (torrent) {
+                var metadata = {};
+
                 if (torrent.infoHash === undefined) {
                     return;
                 }
-                console.log(
-                    torrent.downloadSpeed()
-                );
 
-                $scope.files.push(
-                    JSON.parse(simpleStringify(torrent))
-                );
+                metadata.name = torrent.name;
+                metadata.downloadSpeed = torrent.downloadSpeed;
+                metadata.uploadSpeed = torrent.uploadSpeed;
+
+                $scope.files.push(metadata);
             });
         }
-    }
-
-    $interval(function () {
-        getTorrents();
-    }, 1000);
-
-    function simpleStringify (object) {
-        var simpleObject = {};
-
-        for (var prop in object) {
-            if (!object.hasOwnProperty(prop)) {
-                continue;
-            }
-
-            if (typeof(object[prop]) == 'object') {
-                continue;
-            }
-
-            if (typeof(object[prop]) == 'function') {
-                continue;
-            }
-
-            simpleObject[prop] = object[prop];
-        }
-
-        return JSON.stringify(simpleObject);
     }
 
     $scope.showMagnetField = function () {
@@ -81,13 +56,13 @@ angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, $in
         });
     };
 
-    /**
-     *
-     * #TODO: Implement callback
-     */
-    $scope.applyMagnetUrl = function (event) {
-        webtorrentService.addMagnet($scope.magnetUrl, function () {
+    $scope.applyMagnetUrl = function () {
+        webtorrentService.addMagnet($scope.magnetUrl, function (torrent) {
             getTorrents();
         });
     }
+
+    $interval(function () {
+        getTorrents();
+    }, 1000);
 });

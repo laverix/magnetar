@@ -51,18 +51,17 @@
             <h2>
                 {{ file.name }}
             </h2>
-            {{ file }}
             <div class="size green">
                 14 GB
             </div>
             <div class="speed">
                 <div class="upload">
                     <img src="svg/upload.svg" alt=""/>
-                    <p class="red">12.5 KB/s</p>
+                    <p class="red">{{ file.uploadSpeed | bytes }}/s</p>
                 </div>
                 <div class="download">
                     <img src="svg/download.svg" alt=""/>
-                    <p class="blue">12.5 KB/s</p>
+                    <p class="blue">{{ file.downloadSpeed | bytes }}/s</p>
                 </div>
             </div>
             <div class="controls">
