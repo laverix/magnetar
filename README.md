@@ -1,6 +1,8 @@
 # Mr. Magnet
 Yet another torrent client for Windows, Mac and Linux
 
+![](app/img/cover.png)
+
 ## Installation
 ```JavaScript
 npm i
