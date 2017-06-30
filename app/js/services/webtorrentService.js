@@ -1,8 +1,8 @@
 angular.module('mrmagnet').factory('webtorrentService', function ($http, $injector) {
     "use strict";
 
-    var WebTorrent = require('webtorrent');
-    var client = new WebTorrent();
+    let WebTorrent = require('webtorrent');
+    let client = new WebTorrent();
 
     function addMagnet (magnetUrl, callback) {
         return client.add(magnetUrl, function () {
