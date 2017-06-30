@@ -1,4 +1,4 @@
-angular.module('mrmagnet', ['ngRoute', 'angular-svg-round-progress']).config(function ($routeProvider) {
+angular.module('mrmagnet', ['ngRoute', 'angular-svg-round-progressbar']).config(function ($routeProvider) {
     'use strict';
 
     $routeProvider
