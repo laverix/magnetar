@@ -4,12 +4,12 @@ Yet another torrent client for Windows, Mac and Linux
 ![](app/img/cover.png)
 
 ## Installation
-```JavaScript
+```bash
 npm i
 ```
 
 ## Usage
-```JavaScript
+```bash
 npm start
 ```
 

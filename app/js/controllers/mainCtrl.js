@@ -1,10 +1,10 @@
 angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, $interval, webtorrentService) {
     'use strict';
 
-    var ipc = require('electron').ipcRenderer;
-    var remote = require('electron').remote;
+    let ipc = require('electron').ipcRenderer;
+    let remote = require('electron').remote;
 
-    var dialog = remote.dialog;
+    let dialog = remote.dialog;
 
     $scope.files = [];
 
@@ -13,7 +13,7 @@ angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, $in
             $scope.files = [];
 
             angular.forEach(webtorrentService.getAllTorrents(), function (torrent) {
-                var metadata = {};
+                let metadata = {};
 
                 if (torrent.infoHash === undefined) {
                     return;
@@ -32,16 +32,16 @@ angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, $in
     }
 
     $scope.showMagnetField = function () {
-        var magnetPanel = document.querySelector('.magnet-panel');
-        var magnetField = document.querySelector('#magnet-field');
+        let magnetPanel = document.querySelector('.magnet-panel');
+        let magnetField = document.querySelector('#magnet-field');
 
-        magnetPanel.classList.remove('hide');
+        magnetPanel.classList.toggle('hide');
 
         magnetField.setAttribute('autofocus', true);
     };
 
     $scope.showTorrentDialog = function () {
-        var settings = {
+        let settings = {
             properties: ['openFile'],
             filters: [{
                 name: 'Torrents',
@@ -60,7 +60,7 @@ angular.module('mrmagnet').controller('MainCtrl', function MainCtrl ($scope, $in
         webtorrentService.addMagnet($scope.magnetUrl, function (torrent) {
             getTorrents();
         });
-    }
+    };
 
     $interval(function () {
         getTorrents();

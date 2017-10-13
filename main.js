@@ -1,22 +1,19 @@
 'use strict';
+const {app} = require('electron');
+const {BrowserWindow} = require('electron');
 
-var app = require('app');
-var BrowserWindow = require('browser-window');
-var ipc = require("electron").ipcMain;
-var dialog = require('electron').dialog;
+app.on('window-all-closed', () => {
+    app.quit()
+});
 
-var mainWindow = null;
+app.on('ready', function () {
+    let win = new BrowserWindow({width: 800, height: 300, resizable: true});
 
-app.on('ready', function() {
-    mainWindow = new BrowserWindow({
-        height: 300,
-        minHeight: 300,
-        width: 800,
-        minWidth: 800,
-        resizable: true
+    win.on('closed', () => {
+        win = null
     });
 
-    mainWindow.loadURL('file://' + __dirname + '/app/index.html');
+    win.loadURL('file://' + __dirname + '/app/index.html');
 
-    mainWindow.openDevTools();
+    win.openDevTools();
 });
