@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom variables and variable overwrites
+$global-link-color: #DA7D02;
+
+// Import default variables and available mixins
+@import "../node_modules/uikit/src/scss/variables-theme.scss";
+@import "../node_modules/uikit/src/scss/mixins-theme.scss";
+
+// Custom mixin overwrites
+@mixin hook-card() {
+  color: #000;
+}
+
+// Import uikit
+@import "../node_modules/uikit/src/scss/uikit-theme.scss";
