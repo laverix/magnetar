@@ -1,5 +1,26 @@
 <div class="uk-child-width-1 uk-grid-match" uk-grid>
   <div *ngFor="let ok of [0,1,2,3,4]">
-    <div class="uk-padding uk-light">Item</div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-hover">
+      <div class="uk-card-badge uk-label uk-label-success">
+        14 GB
+      </div>
+      <h3 class="uk-card-title">
+        MUTEMATH - Vitals (Japan Edition) (2016)
+      </h3>
+      <progress id="progressbar" class="uk-progress" value="75" max="100"></progress>
+      <ul class="uk-iconnav uk-float-left">
+        <li>
+          <a href="#" class="uk-text-primary" uk-icon="icon: cloud-download"></a>
+        </li>
+        <li>
+          <a href="#" class="uk-text-danger" uk-icon="icon: cloud-upload"></a>
+        </li>
+      </ul>
+      <ul class="uk-iconnav uk-float-right">
+        <li><a href="#" uk-icon="icon: folder"></a></li>
+        <li><a href="#" uk-icon="icon: ban"></a></li>
+        <li><a href="#" uk-icon="icon: trash"></a></li>
+      </ul>
+    </div>
   </div>
 </div>
