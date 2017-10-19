@@ -4,6 +4,7 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {TorrentsListComponent} from './torrents-list/torrents-list.component';
+import {CoreModule} from "./core/core.module";
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import {TorrentsListComponent} from './torrents-list/torrents-list.component';
     TorrentsListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

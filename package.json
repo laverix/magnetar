@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "ng serve",
-    "electron": "ng serve && electron .",
-    "electron-build": "ng build --prod && electron .",
+    "electron": "ng build --prod --watch & electron .",
     "ng": "ng",
     "build": "ng build",
     "test": "ng test",
@@ -28,6 +27,7 @@
     "jquery": "^3.2.1",
     "rxjs": "^5.4.2",
     "uikit": "^3.0.0-beta.30",
+    "webtorrent": "^0.98.20",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
