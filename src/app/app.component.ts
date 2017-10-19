@@ -8,6 +8,7 @@ declare const UIkit: any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  public search = true;
 
   constructor() {
   }

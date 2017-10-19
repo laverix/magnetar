@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "ng serve",
-    "electron": "ng build --prod --aot --watch & electron .",
+    "electron": "ng build --prod --watch & electron .",
     "ng": "ng",
     "build": "ng build",
     "test": "ng test",
