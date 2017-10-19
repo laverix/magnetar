@@ -5,12 +5,14 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {TorrentsListComponent} from './torrents-list/torrents-list.component';
 import {CoreModule} from "./core/core.module";
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    TorrentsListComponent
+    TorrentsListComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

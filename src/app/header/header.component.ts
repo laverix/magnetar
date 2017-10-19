@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {WebtorrentService} from '../core/webtorrent.service';
+import {RutrackerService} from '../core/rutracker.service';
 
 @Component({
   selector: 'magnet-header',
@@ -8,7 +9,7 @@ import {WebtorrentService} from '../core/webtorrent.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private webtorrentService: WebtorrentService) {
+  constructor(private webtorrentService: WebtorrentService, private rutrackerService: RutrackerService) {
   }
 
   ngOnInit() {
