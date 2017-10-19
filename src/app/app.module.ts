@@ -5,7 +5,9 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {TorrentsListComponent} from './torrents-list/torrents-list.component';
 import {CoreModule} from "./core/core.module";
-import { SearchComponent } from './search/search.component';
+import {SearchComponent} from './search/search.component';
+
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { SearchComponent } from './search/search.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     CoreModule
   ],
   providers: [],

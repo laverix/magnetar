@@ -1,14 +1,10 @@
-<nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-  <div class="uk-navbar-left">
-    <div class="uk-navbar-item">
-      <form action="javascript:void(0)">
-        <button class="uk-button-primary uk-icon-button uk-margin-small-right" uk-icon="icon: plus"></button>
-        <button class="uk-button-secondary uk-icon-button uk-margin-small-right" uk-icon="icon: ban"></button>
-      </form>
-    </div>
-  </div>
-
-  <div class="uk-navbar-right">
-    <a class="uk-navbar-toggle" href="#search-modal" uk-search-icon uk-toggle></a>
-  </div>
-</nav>
+<div class="uk-container uk-margin-small-top uk-margin-small-bottom">
+  <ul class="uk-iconnav uk-float-left">
+    <li><a href="#" uk-icon="icon: plus"></a></li>
+    <li><a href="#" uk-icon="icon: ban"></a></li>
+  </ul>
+  <ul class="uk-iconnav uk-float-right">
+    <li *ngIf="search"><a (click)="toggleSearch()" href="#" uk-icon="icon: list"></a></li>
+    <li *ngIf="!search || true"><a href="#search-modal" uk-toggle uk-icon="icon: search"></a></li>
+  </ul>
+</div>

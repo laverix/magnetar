@@ -8,9 +8,13 @@ declare const UIkit: any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  public search = true;
+  public search = false;
 
   constructor() {
+  }
+
+  public onToggleSearch(event) {
+    this.search = event;
   }
 
   ngOnInit() {

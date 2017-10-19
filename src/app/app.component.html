@@ -1,3 +1,3 @@
-<magnet-header></magnet-header>
+<magnet-header [search]="search" (onToggleSearch)="onToggleSearch($event)"></magnet-header>
 <magnet-torrents-list *ngIf="!search"></magnet-torrents-list>
-<magnet-search *ngIf="search"></magnet-search>
+<magnet-search [toggleSearch]="search" (onToggleSearch)="onToggleSearch($event)"></magnet-search>

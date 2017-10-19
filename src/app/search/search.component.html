@@ -1,46 +1,43 @@
 <div id="search-modal" class="uk-modal-full uk-modal" uk-modal>
   <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
     <button class="uk-modal-close-full" type="button" uk-close></button>
-    <form class="uk-search uk-search-large">
-      <input class="uk-search-input uk-text-center" type="search" placeholder="Search..." autofocus>
+    <form class="uk-search uk-search-large" #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm.value)">
+      <input class="uk-search-input uk-text-center"
+             type="search"
+             placeholder="Search..."
+             name="searchQuery"
+             [(ngModel)]="searchQuery"
+             autofocus>
     </form>
   </div>
 </div>
 
-<div class="uk-child-width-1 uk-grid-match" uk-grid>
-  <div *ngFor="let ok of [0,1,2,3,4]">
-    <div class="uk-card uk-card-body uk-card-small uk-card-hover">
-      <!--<div class="uk-card-badge uk-label uk-label-success">-->
-      <!--8.10 GB-->
-      <!--</div>-->
+<div class="uk-child-width-1 uk-grid-match" uk-grid *ngIf="toggleSearch">
+  <div *ngFor="let item of searchResult">
+    <div class="uk-card uk-card-body uk-card-small">
       <h3 class="uk-card-title">
-        Человек дождя / Rain Man (Барри Левинсон / Barry Levinson) [1988, США, драма, DVD9] MVO + Original Eng
+        {{ item.title }}
       </h3>
       <ul class="uk-iconnav uk-float-left">
         <li>
-
           <a href="#" class="uk-text-primary uk-float-left uk-margin-small-right" uk-icon="icon: users"></a>
-          <span href="" class="uk-text-small uk-text-primary uk-float-left">0</span>
+          <span href="" class="uk-text-small uk-text-primary uk-float-left">{{ item.seeds }}</span>
         </li>
         <li>
           <a href="#" class="uk-text-danger uk-float-left uk-margin-small-right" uk-icon="icon: users"></a>
-          <span href="" class="uk-text-small uk-text-danger uk-float-left">12</span>
+          <span href="" class="uk-text-small uk-text-danger uk-float-left">{{ item.leechs }}</span>
         </li>
       </ul>
 
       <ul class="uk-iconnav uk-float-right">
         <li>
           <a href="#" class="uk-text-success uk-float-left uk-margin-small-right" uk-icon="icon: bookmark"></a>
-          <span href="" class="uk-text-success uk-text-small uk-float-left">Приватные раздачи (Архив)</span>
+          <span href="" class="uk-text-success uk-text-small uk-float-left">{{ item.category }}</span>
         </li>
         <li>
-
           <a href="#" class="uk-text-warning uk-float-left uk-margin-small-right" uk-icon="icon: copy"></a>
-          <span href="" class="uk-text-small uk-text-warning uk-float-left">8.10 GB</span>
+          <span href="" class="uk-text-small uk-text-warning uk-float-left">{{ item.size }}</span>
         </li>
-        <!--<li><a href="#" uk-icon="icon: folder"></a></li>-->
-        <!--<li><a href="#" uk-icon="icon: ban"></a></li>-->
-        <!--<li><a href="#" uk-icon="icon: trash"></a></li>-->
       </ul>
     </div>
   </div>

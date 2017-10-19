@@ -4,6 +4,7 @@ declare const nodeRequire: any;
 
 @Injectable()
 export class RutrackerService {
+  public rutracker;
 
   constructor() {
     const RutrackerApi = nodeRequire('rutracker-api');
@@ -11,12 +12,11 @@ export class RutrackerService {
       username: 'mrmagnetapp',
       password: 'mrmagnetapp'
     };
-    const rutracker = new RutrackerApi(credentials);
-    const query = 'Человек';
-    const callback = console.log.bind(console);
 
-    rutracker.on('login', () => {
-      rutracker.search(query, callback);
-    });
+    this.rutracker = new RutrackerApi(credentials);
+  }
+
+  searchByTitle(query, callback) {
+    return this.rutracker.search(query, callback);
   }
 }
