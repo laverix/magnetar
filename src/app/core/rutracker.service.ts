@@ -19,4 +19,8 @@ export class RutrackerService {
   searchByTitle(query, callback) {
     return this.rutracker.search(query, callback);
   }
+
+  downloadTorrent(id, callback) {
+    return this.rutracker.download(id, callback);
+  }
 }
