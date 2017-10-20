@@ -1,0 +1,13 @@
+<div id="search-modal" class="uk-modal-full uk-modal" uk-modal>
+  <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
+    <button class="uk-modal-close-full" type="button" uk-close></button>
+    <form class="uk-search uk-search-large" #searchForm="ngForm" (ngSubmit)="search(searchForm.value)">
+      <input class="uk-search-input uk-text-center"
+             type="search"
+             placeholder="Search..."
+             name="searchQuery"
+             [(ngModel)]="searchQuery"
+             autofocus>
+    </form>
+  </div>
+</div>

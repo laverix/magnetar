@@ -1,6 +1,4 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange} from '@angular/core';
-import {WebtorrentService} from '../core/webtorrent.service';
-import {RutrackerService} from '../core/rutracker.service';
 
 @Component({
   selector: 'magnet-header',
@@ -8,10 +6,10 @@ import {RutrackerService} from '../core/rutracker.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit, OnChanges {
-  @Input() search;
-  @Output() onToggleSearch = new EventEmitter<boolean>();
+  @Input() searchMode;
+  @Output() toggleSearchModeEvent = new EventEmitter<boolean>();
 
-  constructor(private webtorrentService: WebtorrentService, private rutrackerService: RutrackerService) {
+  constructor() {
   }
 
   ngOnInit() {
@@ -20,10 +18,10 @@ export class HeaderComponent implements OnInit, OnChanges {
   ngOnChanges(changes: { [propKey: string]: SimpleChange }) {
   }
 
-  toggleSearch() {
-    this.search = !this.search;
+  toggleSearchMode() {
+    this.searchMode = !this.searchMode;
 
-    this.onToggleSearch.emit(this.search);
+    this.toggleSearchModeEvent.emit(this.searchMode);
 
     return false;
   }

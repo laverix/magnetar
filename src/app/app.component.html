@@ -1,3 +1,7 @@
-<magnet-header [search]="search" (onToggleSearch)="onToggleSearch($event)"></magnet-header>
-<magnet-torrents-list *ngIf="!search"></magnet-torrents-list>
-<magnet-search [toggleSearch]="search" (onToggleSearch)="onToggleSearch($event)"></magnet-search>
+<magnet-header [searchMode]="searchMode" (toggleSearchModeEvent)="toggleSearchMode($event)"></magnet-header>
+<magnet-search-modal [searchMode]="searchMode" (toggleSearchModeEvent)="toggleSearchMode($event)"
+                     (searchResultEvent)="getSearchResult($event)"></magnet-search-modal>
+
+<magnet-torrents-list *ngIf="!searchMode"></magnet-torrents-list>
+
+<magnet-search-list *ngIf="searchMode" [searchResultSubject]="searchResultSubject"></magnet-search-list>

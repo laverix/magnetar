@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Subject} from 'rxjs/Subject';
 
 declare const UIkit: any;
 
@@ -8,13 +9,18 @@ declare const UIkit: any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  public search = false;
+  public searchMode = false;
+  public searchResultSubject: Subject<any> = new Subject();
 
   constructor() {
   }
 
-  public onToggleSearch(event) {
-    this.search = event;
+  public toggleSearchMode(value: boolean) {
+    this.searchMode = value;
+  }
+
+  public getSearchResult(value) {
+    this.searchResultSubject.next(value);
   }
 
   ngOnInit() {

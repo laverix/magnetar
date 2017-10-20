@@ -1,18 +1,4 @@
-<div id="search-modal" class="uk-modal-full uk-modal" uk-modal>
-  <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
-    <button class="uk-modal-close-full" type="button" uk-close></button>
-    <form class="uk-search uk-search-large" #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm.value)">
-      <input class="uk-search-input uk-text-center"
-             type="search"
-             placeholder="Search..."
-             name="searchQuery"
-             [(ngModel)]="searchQuery"
-             autofocus>
-    </form>
-  </div>
-</div>
-
-<div class="uk-child-width-1 uk-grid-match" uk-grid *ngIf="toggleSearch">
+<div class="uk-child-width-1 uk-grid-match" uk-grid>
   <div *ngFor="let item of searchResult">
     <div class="uk-card uk-card-body uk-card-small">
       <h3 class="uk-card-title">
@@ -22,6 +8,7 @@
         <li>
           <a href="#" class="uk-text-primary uk-float-left uk-margin-small-right" uk-icon="icon: users"></a>
           <span href="" class="uk-text-small uk-text-primary uk-float-left">{{ item.seeds }}</span>
+
         </li>
         <li>
           <a href="#" class="uk-text-danger uk-float-left uk-margin-small-right" uk-icon="icon: users"></a>

@@ -4,7 +4,7 @@
     <li><a href="#" uk-icon="icon: ban"></a></li>
   </ul>
   <ul class="uk-iconnav uk-float-right">
-    <li *ngIf="search"><a (click)="toggleSearch()" href="#" uk-icon="icon: list"></a></li>
-    <li *ngIf="!search || true"><a href="#search-modal" uk-toggle uk-icon="icon: search"></a></li>
+    <li *ngIf="searchMode"><a (click)="toggleSearchMode()" href="#" uk-icon="icon: list"></a></li>
+    <li *ngIf="!searchMode"><a href="#search-modal" uk-toggle uk-icon="icon: search"></a></li>
   </ul>
 </div>
