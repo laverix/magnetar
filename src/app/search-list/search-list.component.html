@@ -1,4 +1,5 @@
 <div class="uk-child-width-1 uk-grid-match" uk-grid>
+  <div class="uk-margin-xlarge-top" *ngIf="!searchResult.length" uk-spinner></div>
   <div *ngFor="let item of searchResult">
     <div class="uk-card uk-card-body uk-card-small">
       <h3 class="uk-card-title">
