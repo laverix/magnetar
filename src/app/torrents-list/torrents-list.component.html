@@ -1,21 +1,21 @@
 <div class="uk-child-width-1 uk-grid-match" uk-grid>
-  <div *ngFor="let ok of [0,1,2,3,4]">
+  <div *ngFor="let torrent of torrents">
     <div class="uk-card uk-card-default uk-card-body uk-card-hover">
       <div class="uk-card-badge uk-label uk-label-success">
         14 GB
       </div>
       <h3 class="uk-card-title">
-        MUTEMATH - Vitals (Japan Edition) (2016)
+        {{ torrent.name }}
       </h3>
-      <progress id="progressbar" class="uk-progress" value="75" max="100"></progress>
+      <progress id="progressbar" class="uk-progress" value="{{ torrent.progress }}" max="1"></progress>
       <ul class="uk-iconnav uk-float-left">
         <li>
           <a href="#" class="uk-text-primary uk-float-left uk-margin-small-right" uk-icon="icon: cloud-download"></a>
-          <span href="" class="uk-text-small uk-text-primary uk-float-left">6 mb/s</span>
+          <span href="" class="uk-text-small uk-text-primary uk-float-left">{{ torrent.downloadSpeed }} bytes/sec</span>
         </li>
         <li class="uk-margin-medium-left">
           <a href="#" class="uk-text-danger uk-float-left uk-margin-small-right" uk-icon="icon: cloud-upload"></a>
-          <span href="" class="uk-text-small uk-text-danger uk-float-left">304 kb/s</span>
+          <span href="" class="uk-text-small uk-text-danger uk-float-left">{{ torrent.uploadSpeed }} bytes/sec</span>
         </li>
       </ul>
       <ul class="uk-iconnav uk-float-right">

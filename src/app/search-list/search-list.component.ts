@@ -1,9 +1,10 @@
-import {ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Subject} from 'rxjs/Subject';
 import {RutrackerService} from '../core/rutracker.service';
 import {WebtorrentService} from '../core/webtorrent.service';
 
-declare const nodeRequire: any;
+import * as _ from 'lodash';
+
 
 @Component({
   selector: 'magnet-search-list',
@@ -12,31 +13,37 @@ declare const nodeRequire: any;
 })
 export class SearchListComponent implements OnInit {
   @Input() searchResultSubject: Subject<any>;
-  public searchResult = [];
-  public fs;
+  @Input() searchMode: boolean;
+  @Output() toggleSearchModeEvent = new EventEmitter<boolean>();
 
-  constructor(private changeDetectorRef: ChangeDetectorRef, private rutrackerService: RutrackerService, private webtorrentService: WebtorrentService) {
-    this.fs = nodeRequire('fs');
+  public searchResult = [];
+
+  constructor(private changeDetectorRef: ChangeDetectorRef,
+              private rutrackerService: RutrackerService,
+              private webtorrentService: WebtorrentService) {
   }
 
-  public download(id) {
-    this.rutrackerService.downloadTorrent(id, (response) => {
-      const file = `${id}.torrent`;
-      const writeStream = this.fs.createWriteStream(file);
+  public download(item) {
+    this.rutrackerService.downloadTorrent(item.id, (response) => {
+      /**
+       * Fix this
+       * @type {{name}}
+       */
+      const options = {
+        name: item.name
+      };
 
-      response.pipe(writeStream);
+      this.toggleSearchModeEvent.emit(this.searchMode = false);
 
-      writeStream.on('finish', (re) => {
-        this.webtorrentService.seedFile(file, (res) => {
-          console.log(res);
-        });
+      this.webtorrentService.seedFile(response, options, () => {
+
       });
     });
   }
 
   ngOnInit() {
     this.searchResultSubject.subscribe((event) => {
-      this.searchResult = event;
+      this.searchResult = _.cloneDeep(event);
       this.changeDetectorRef.detectChanges();
     });
   }

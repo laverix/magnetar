@@ -12,7 +12,15 @@ export class WebtorrentService {
     this.webtorrent = new Webtorrent();
   }
 
-  seedFile(file, callback) {
-    return this.webtorrent.seed(file, callback);
+  seedFile(file, options, callback) {
+    return this.webtorrent.seed(file, options, callback);
+  }
+
+  onAddTorrent(callback) {
+    return this.webtorrent.on('torrent', callback);
+  }
+
+  getTorrents() {
+    return this.webtorrent.torrents;
   }
 }
