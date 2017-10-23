@@ -24,13 +24,18 @@
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
     "@types/lodash": "^4.14.78",
+    "bittorrent-protocol": "^2.2.3",
+    "bittorrent-tracker": "^9.2.3",
     "core-js": "^2.4.1",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "rutracker-api": "^0.2.0",
     "rxjs": "^5.4.2",
+    "torrent-discovery": "^8.3.1",
     "uikit": "^3.0.0-beta.30",
+    "ut_pex": "^1.1.6",
     "webtorrent": "^0.98.20",
+    "webtorrent-hybrid": "^1.0.6",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

@@ -29,5 +29,12 @@ export class AppComponent implements OnInit {
     this.webtorrentService.onAddTorrent(() => {
       this.torrents = this.webtorrentService.getTorrents();
     });
+
+
+    this.webtorrentService.onTorrentError((errors) => {
+      console.log(
+        errors
+      );
+    });
   }
 }

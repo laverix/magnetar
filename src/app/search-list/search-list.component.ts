@@ -5,6 +5,7 @@ import {WebtorrentService} from '../core/webtorrent.service';
 
 import * as _ from 'lodash';
 
+declare const nodeRequire: any;
 
 @Component({
   selector: 'magnet-search-list',
@@ -21,19 +22,20 @@ export class SearchListComponent implements OnInit {
   constructor(private changeDetectorRef: ChangeDetectorRef,
               private rutrackerService: RutrackerService,
               private webtorrentService: WebtorrentService) {
+
   }
 
   public download(item) {
-    this.rutrackerService.downloadTorrent(item.id, (response) => {
-      const options = {
-        name: item.title
-      };
+    this.rutrackerService.downloadTorrent(item.id, (stream) => {
+      this.webtorrentService.downloadFileFromWriteStream(item.id, stream, () => {});
 
-      this.webtorrentService.seedFile(response, options, () => {
-      });
+      // this.webtorrentService.seedFile(stream, item.title, () => {});
 
       this.toggleSearchModeEvent.emit(this.searchMode = false);
     });
+
+
+
   }
 
   ngOnInit() {
