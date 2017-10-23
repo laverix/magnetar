@@ -32,9 +32,7 @@ export class AppComponent implements OnInit {
 
 
     this.webtorrentService.onTorrentError((errors) => {
-      console.log(
-        errors
-      );
+      console.log(errors);
     });
   }
 }

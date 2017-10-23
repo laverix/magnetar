@@ -9,6 +9,7 @@ import {SearchListComponent} from './search-list/search-list.component';
 
 import {FormsModule} from '@angular/forms';
 import {SearchModalComponent} from './search-modal/search-modal.component';
+import { BytesPipe } from './shared/bytes.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {SearchModalComponent} from './search-modal/search-modal.component';
     HeaderComponent,
     TorrentsListComponent,
     SearchListComponent,
-    SearchModalComponent
+    SearchModalComponent,
+    BytesPipe
   ],
   imports: [
     BrowserModule,

@@ -12,9 +12,8 @@ export class WebtorrentService {
 
   constructor() {
     const Webtorrent = nodeRequire('webtorrent');
-    // const Webtorrent = nodeRequire('webtorrent-hybrid');
-    this.webtorrent = new Webtorrent();
 
+    this.webtorrent = new Webtorrent();
     this.fs = nodeRequire('fs');
   }
 
@@ -24,7 +23,7 @@ export class WebtorrentService {
 
     stream.pipe(writeStream);
 
-    writeStream.on('finish', (re) => {
+    writeStream.on('finish', () => {
       return this.webtorrent.add(file, callback);
     });
   }
