@@ -25,19 +25,14 @@ export class SearchListComponent implements OnInit {
 
   public download(item) {
     this.rutrackerService.downloadTorrent(item.id, (response) => {
-      /**
-       * Fix this
-       * @type {{name}}
-       */
       const options = {
-        name: item.name
+        name: item.title
       };
 
-      this.toggleSearchModeEvent.emit(this.searchMode = false);
-
       this.webtorrentService.seedFile(response, options, () => {
-
       });
+
+      this.toggleSearchModeEvent.emit(this.searchMode = false);
     });
   }
 
