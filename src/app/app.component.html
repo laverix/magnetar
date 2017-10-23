@@ -5,7 +5,8 @@
                      (toggleSearchModeEvent)="toggleSearchMode($event)"
                      (searchResultEvent)="getSearchResult($event)"></magnet-search-modal>
 
-<magnet-torrents-list *ngIf="!searchMode"></magnet-torrents-list>
+<magnet-torrents-list *ngIf="!searchMode" [torrents]="torrents"></magnet-torrents-list>
+
 
 <magnet-search-list *ngIf="searchMode"
                     [searchResultSubject]="searchResultSubject"

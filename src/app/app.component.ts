@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Subject} from 'rxjs/Subject';
+import {WebtorrentService} from './core/webtorrent.service';
 
 declare const UIkit: any;
 
@@ -11,8 +12,9 @@ declare const UIkit: any;
 export class AppComponent implements OnInit {
   public searchMode = false;
   public searchResultSubject: Subject<any> = new Subject();
+  public torrents;
 
-  constructor() {
+  constructor(private webtorrentService: WebtorrentService) {
   }
 
   public toggleSearchMode(value: boolean) {
@@ -24,5 +26,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.webtorrentService.onAddTorrent(() => {
+      this.torrents = this.webtorrentService.getTorrents();
+    });
   }
 }

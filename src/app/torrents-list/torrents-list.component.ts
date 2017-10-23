@@ -1,6 +1,4 @@
-import {ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
-import {WebtorrentService} from '../core/webtorrent.service';
-import * as _ from 'lodash';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'magnet-torrents-list',
@@ -8,15 +6,12 @@ import * as _ from 'lodash';
   styleUrls: ['./torrents-list.component.scss']
 })
 export class TorrentsListComponent implements OnInit {
-  public torrents = [];
+  @Input() torrents;
 
-  constructor(private webtorrentService: WebtorrentService, private changeDetectorRef: ChangeDetectorRef) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.webtorrentService.onAddTorrent(() => {
-      this.torrents = _.cloneDeep(this.webtorrentService.getTorrents());
-      this.changeDetectorRef.detectChanges();
-    });
+
   }
 }
