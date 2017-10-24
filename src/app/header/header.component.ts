@@ -19,9 +19,7 @@ export class HeaderComponent implements OnInit, OnChanges {
   }
 
   toggleSearchMode() {
-    this.searchMode = !this.searchMode;
-
-    this.toggleSearchModeEvent.emit(this.searchMode);
+    this.toggleSearchModeEvent.emit(!this.searchMode);
 
     return false;
   }

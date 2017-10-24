@@ -1,26 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 // Custom variables and variable overwrites
-$global-font-family: 'Open Sans', sans-serif;
-$global-background: #383F4A;
-$global-muted-background: #383F4A;
-$global-danger-background: #FC625D;
-$global-secondary-background: #FDC04D;
-$global-primary-background: #91D66E;
-$global-emphasis-color: #E9ECF1;
-$card-title-font-size: 14px;
-$card-default-background: #323A45;
-$global-color: #E9ECF1;
-$grid-gutter-horizontal: 0;
+//$global-font-family: 'Open Sans', sans-serif;
+//$global-background: #383F4A;
+//$global-muted-background: #383F4A;
+//$global-danger-background: #FC625D;
+//$global-secondary-background: #FDC04D;
+//$global-primary-background: #91D66E;
+//$global-emphasis-color: #E9ECF1;
+//$card-title-font-size: 14px;
+//$card-default-background: #323A45;
+//$global-color: #E9ECF1;
+//$grid-gutter-horizontal: 0;
 
 // Import default variables and available mixins
 @import "../node_modules/uikit/src/scss/variables-theme.scss";
 @import "../node_modules/uikit/src/scss/mixins-theme.scss";
 
 // Custom mixin overwrites
-@mixin hook-card() {
-  color: #000;
-}
+//@mixin hook-card() {
+//  color: #000;
+//}
 
 // Import uikit
 @import "../node_modules/uikit/src/scss/uikit-theme.scss";
@@ -41,11 +41,11 @@ html, body {
 * {
   cursor: default !important;
 }
-
-.uk-card {
-  border-top: 1px solid #323A45;
-}
-
-.uk-card:hover {
-  background: #323A45;
-}
+//
+//.uk-card {
+//  border-top: 1px solid #323A45;
+//}
+//
+//.uk-card:hover {
+//  background: #323A45;
+//}
