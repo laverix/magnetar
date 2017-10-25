@@ -1,7 +1,7 @@
 <div class="uk-card uk-card-body uk-card-small uk-animation-slide-bottom-medium"
      *ngFor="let torrent of torrents">
   <div class="uk-flex">
-    <a href="#" class="uk-margin-small-right" uk-icon="icon: folder"></a>
+    <a href="#" class="uk-margin-small-right" uk-icon="icon: folder" (click)="showItemInFolder(torrent.path)"></a>
     <h3 class="uk-card-title uk-margin-remove-bottom uk-margin-remove-top">
       {{ torrent.name }}
     </h3>
@@ -15,6 +15,14 @@
     <li>
       <a href="#" class="uk-float-left uk-margin-small-right" uk-icon="icon: cloud-upload"></a>
       <span href="" class="uk-text-small uk-float-left">{{ torrent.uploadSpeed | bytes }}</span>
+    </li>
+    <li>
+      <a href="#" class="uk-float-left uk-margin-small-right" uk-icon="icon: future"></a>
+      <span href="" class="uk-text-small uk-float-left">{{ torrent.timeRemaining }}</span>
+    </li>
+    <li>
+      <a href="#" class="uk-float-left uk-margin-small-right" uk-icon="icon: users"></a>
+      <span href="" class="uk-text-small uk-float-left">{{ torrent.numPeers }}</span>
     </li>
   </ul>
 
