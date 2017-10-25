@@ -31,5 +31,11 @@
       <a href="#" class="uk-float-left uk-margin-small-right" uk-icon="icon: database"></a>
       <span href="" class="uk-text-small uk-float-left">{{ torrent.length | bytes }}</span>
     </li>
+    <li>
+      <a href="#"
+         class="uk-float-left uk-margin-small-right uk-text-danger"
+         uk-icon="icon: trash"
+         (click)="removeTorrent(torrent)"></a>
+    </li>
   </ul>
 </div>

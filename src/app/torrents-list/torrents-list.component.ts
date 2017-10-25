@@ -23,6 +23,14 @@ export class TorrentsListComponent implements OnInit, OnChanges {
     return false;
   }
 
+  public removeTorrent(torrent) {
+    torrent.destroy(() => {
+      console.log('destroyed');
+    });
+
+    return false;
+  }
+
   ngOnInit() {
   }
 
