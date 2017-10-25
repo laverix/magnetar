@@ -7,7 +7,7 @@
     "start": "ng serve",
     "electron": "ng build --prod --watch & electron .",
     "ng": "ng",
-    "build": "ng build",
+    "build": "ng build --prod && electron-packager . --overwrite --platform=darwin --arch=x64 --icon=src/assets/icons/mac/icon.icns --prune=true --out=release-builds",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -46,6 +46,7 @@
     "@types/node": "~6.0.60",
     "codelyzer": "~3.1.1",
     "electron": "^1.7.9",
+    "electron-packager": "^9.1.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",

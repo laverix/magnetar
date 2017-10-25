@@ -11,7 +11,9 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true
     },
-    icon: path.join(__dirname, 'src/assets/icons/png/64x64.png')
+    backgroundColor: '#ffffff',
+    icon: path.join(__dirname, 'dist/assets/icons/png/64x64.png'),
+    titleBarStyle: 'hidden'
   });
 
   win.loadURL(url.format({
