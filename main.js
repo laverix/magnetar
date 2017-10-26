@@ -12,8 +12,7 @@ function createWindow() {
       nodeIntegration: true
     },
     backgroundColor: '#ffffff',
-    icon: path.join(__dirname, 'dist/assets/icons/png/64x64.png'),
-    titleBarStyle: 'hidden'
+    icon: path.join(__dirname, 'dist/assets/icons/png/64x64.png')
   });
 
   win.loadURL(url.format({
