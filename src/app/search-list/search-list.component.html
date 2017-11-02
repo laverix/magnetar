@@ -1,4 +1,6 @@
-<div class="uk-margin-xlarge-top" *ngIf="!searchResult.length" uk-spinner></div>
+<div class="uk-flex uk-flex-center uk-margin-xlarge-top" *ngIf="!searchResult.length">
+  <div uk-spinner></div>
+</div>
 
 <div class="uk-card uk-card-body uk-card-small uk-animation-slide-bottom-medium"
      *ngFor="let item of searchResult"
