@@ -6,30 +6,32 @@
       {{ torrent.name }}
     </h3>
   </div>
-  <progress id="progressbar" class="uk-progress" value="{{ torrent.progress }}" max="1"></progress>
+  <progress id="progressbar" class="uk-progress"
+            [ngClass]="{'uk-': torrent.progress === 1}"
+            value="{{ torrent.progress }}" max="1"></progress>
   <ul class="uk-iconnav uk-float-left">
     <li>
-      <a href="#" class="uk-float-left uk-margin-small-right" uk-icon="icon: cloud-download"></a>
-      <span href="" class="uk-text-small uk-float-left">{{ torrent.downloadSpeed | bytes }}</span>
+      <a href="#" class="uk-float-left uk-margin-small-right uk-text-success" uk-icon="icon: cloud-download"></a>
+      <span href="" class="uk-text-small uk-float-left uk-text-success">{{ torrent.downloadSpeed | bytes }}</span>
     </li>
     <li>
-      <a href="#" class="uk-float-left uk-margin-small-right" uk-icon="icon: cloud-upload"></a>
-      <span href="" class="uk-text-small uk-float-left">{{ torrent.uploadSpeed | bytes }}</span>
+      <a href="#" class="uk-float-left uk-margin-small-right uk-text-warning" uk-icon="icon: cloud-upload"></a>
+      <span href="" class="uk-text-small uk-float-left uk-text-warning">{{ torrent.uploadSpeed | bytes }}</span>
     </li>
     <li>
-      <a href="#" class="uk-float-left uk-margin-small-right" uk-icon="icon: future"></a>
-      <span href="" class="uk-text-small uk-float-left">{{ torrent.timeRemaining }}</span>
-    </li>
-    <li>
-      <a href="#" class="uk-float-left uk-margin-small-right" uk-icon="icon: users"></a>
-      <span href="" class="uk-text-small uk-float-left">{{ torrent.numPeers }}</span>
+      <a href="#" class="uk-float-left uk-margin-small-right uk-text-danger" uk-icon="icon: users"></a>
+      <span href="" class="uk-text-small uk-float-left uk-text-danger">{{ torrent.numPeers }}</span>
     </li>
   </ul>
 
   <ul class="uk-iconnav uk-float-right">
     <li>
-      <a href="#" class="uk-float-left uk-margin-small-right" uk-icon="icon: database"></a>
-      <span href="" class="uk-text-small uk-float-left">{{ torrent.length | bytes }}</span>
+      <a href="#" class="uk-float-left uk-margin-small-right" uk-icon="icon: future"></a>
+      <span href="" class="uk-text-small uk-float-left">{{ torrent.timeRemaining }}</span>
+    </li>
+    <li>
+      <a href="#" class="uk-float-left uk-margin-small-right uk-text-primary" uk-icon="icon: database"></a>
+      <span href="" class="uk-text-small uk-float-left uk-text-primary">{{ torrent.length | bytes }}</span>
     </li>
     <li>
       <a href="#"

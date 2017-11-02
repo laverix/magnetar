@@ -4,26 +4,26 @@
       Magnet
     </a>
   </div>
-  <div class="uk-navbar-left">
-    <ul class="uk-navbar-nav">
-      <li>
-        <a routerLink="/">
-          <span class="uk-icon uk-margin-small-right" uk-icon="icon: plus"></span>
-          Add
-        </a>
-      </li>
-    </ul>
-  </div>
+  <!--  <div class="uk-navbar-left">
+      <ul class="uk-navbar-nav">
+        <li>
+          <a routerLink="/">
+            <span class="uk-icon uk-margin-small-right" uk-icon="icon: plus"></span>
+            Add
+          </a>
+        </li>
+      </ul>
+    </div>-->
   <div class="uk-navbar-right">
     <ul class="uk-navbar-nav">
       <li *ngIf="searchMode">
         <a (click)="toggleSearchMode()">
-          <span class="uk-icon uk-margin-small-right" uk-icon="icon: list"></span>
+          <span class="uk-icon uk-margin-small-right uk-text-primary" uk-icon="icon: list"></span>
         </a>
       </li>
       <li *ngIf="!searchMode">
         <a href="#search-modal" uk-toggle>
-          <span class="uk-icon uk-margin-small-right" uk-icon="icon: search"></span>
+          <span class="uk-icon uk-margin-small-right uk-text-primary" uk-icon="icon: search"></span>
         </a>
       </li>
     </ul>
