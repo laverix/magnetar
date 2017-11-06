@@ -1,20 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-// Custom variables and variable overwrites
 $global-font-family: 'Open Sans', sans-serif;
+$global-color: #ecf0f1;
+$global-emphasis-color: #ecf0f1;
+$global-background: #34495e;
+$global-muted-color: #bdc3c7;
+$global-danger-background: #e74c3c;
+$global-success-background: #2ecc71;
+$global-warning-background: #f1c40f;
+
+$navbar-background: #2c3e50;
 $card-title-font-size: 14px;
-//$global-background: #383F4A;
-//$global-muted-background: #383F4A;
-//$global-danger-background: #FC625D;
-//$global-secondary-background: #FDC04D;
-//$global-primary-background: #91D66E;
-//$global-emphasis-color: #E9ECF1;
 
-//$card-default-background: #323A45;
-//$global-color: #E9ECF1;
-//$grid-gutter-horizontal: 0;
-
-// Import default variables and available mixins
 @import "../node_modules/uikit/src/scss/variables-theme.scss";
 @import "../node_modules/uikit/src/scss/mixins-theme.scss";
 
@@ -23,7 +20,6 @@ $card-title-font-size: 14px;
 //  color: #000;
 //}
 
-// Import uikit
 @import "../node_modules/uikit/src/scss/uikit-theme.scss";
 
 html, body {
