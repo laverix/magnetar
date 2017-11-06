@@ -10,6 +10,7 @@ import {SearchListComponent} from './search-list/search-list.component';
 import {FormsModule} from '@angular/forms';
 import {SearchModalComponent} from './search-modal/search-modal.component';
 import { BytesPipe } from './shared/bytes.pipe';
+import { MillisToMinutesPipe } from './shared/millis-to-minutes.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BytesPipe } from './shared/bytes.pipe';
     TorrentsListComponent,
     SearchListComponent,
     SearchModalComponent,
-    BytesPipe
+    BytesPipe,
+    MillisToMinutesPipe
   ],
   imports: [
     BrowserModule,
