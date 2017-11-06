@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('mrmagnet App', () => {
+describe('magnet App', () => {
   let page: AppPage;
 
   beforeEach(() => {

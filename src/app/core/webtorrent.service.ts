@@ -20,7 +20,7 @@ export class WebtorrentService {
   }
 
   downloadFileFromWriteStream(id, stream, callback) {
-    const file = `torrents/${id}.torrent`;
+    const file = `${this.electron.remote.app.getPath('userData')}/${id}.torrent`;
     const writeStream = this.fs.createWriteStream(file);
     const opts = {
       path: this.electron.remote.app.getPath('downloads'),
