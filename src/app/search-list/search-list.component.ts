@@ -27,15 +27,13 @@ export class SearchListComponent implements OnInit {
 
   public download(item) {
     this.rutrackerService.downloadTorrent(item.id, (stream) => {
-      this.webtorrentService.downloadFileFromWriteStream(item.id, stream, () => {});
+      this.webtorrentService.downloadFileFromWriteStream(item.id, stream, () => {
+      });
 
       // this.webtorrentService.seedFile(stream, item.title, () => {});
 
       this.toggleSearchModeEvent.emit(this.searchMode = false);
     });
-
-
-
   }
 
   ngOnInit() {
