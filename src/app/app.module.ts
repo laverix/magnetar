@@ -9,8 +9,7 @@ import {SearchListComponent} from './search-list/search-list.component';
 
 import {FormsModule} from '@angular/forms';
 import {SearchModalComponent} from './search-modal/search-modal.component';
-import { BytesPipe } from './shared/bytes.pipe';
-import { MillisToMinutesPipe } from './shared/millis-to-minutes.pipe';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,13 +17,12 @@ import { MillisToMinutesPipe } from './shared/millis-to-minutes.pipe';
     HeaderComponent,
     TorrentsListComponent,
     SearchListComponent,
-    SearchModalComponent,
-    BytesPipe,
-    MillisToMinutesPipe
+    SearchModalComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    SharedModule,
     CoreModule
   ],
   providers: [],
