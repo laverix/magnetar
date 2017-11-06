@@ -2,7 +2,7 @@
   <div uk-spinner></div>
 </div>
 
-<div class="uk-card uk-card-body uk-card-small uk-animation-slide-bottom-medium"
+<div class="uk-card uk-card-hover uk-card-body uk-card-small uk-animation-slide-bottom-medium"
      *ngFor="let item of searchResult"
      (click)="download(item)">
   <h3 class="uk-card-title">
@@ -10,17 +10,17 @@
   </h3>
   <ul class="uk-iconnav uk-float-left">
     <li>
-      <a href="#" class="uk-float-left uk-margin-small-right uk-text-success" uk-icon="icon: users"></a>
+      <a class="uk-float-left uk-margin-small-right uk-text-success" uk-icon="icon: users"></a>
       <span href="" class="uk-text-small uk-float-left uk-text-success">{{ item.seeds }}</span>
     </li>
     <li>
-      <a href="#" class="uk-float-left uk-margin-small-right uk-text-warning" uk-icon="icon: users"></a>
+      <a class="uk-float-left uk-margin-small-right uk-text-warning" uk-icon="icon: users"></a>
       <span href="" class="uk-text-small uk-float-left uk-text-warning">{{ item.leechs }}</span>
     </li>
   </ul>
   <ul class="uk-iconnav uk-float-right">
     <li>
-      <a href="#" class="uk-float-left uk-margin-small-right uk-text-success" uk-icon="icon: database"></a>
+      <a class="uk-float-left uk-margin-small-right uk-text-success" uk-icon="icon: database"></a>
       <span href="" class="uk-text-small uk-float-left uk-text-success">{{ item.size }}</span>
     </li>
   </ul>

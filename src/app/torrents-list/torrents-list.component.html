@@ -1,7 +1,8 @@
-<div class="uk-card uk-card-body uk-card-small uk-animation-slide-bottom-medium"
-     *ngFor="let torrent of torrents">
+<div class="uk-card uk-card-hover uk-card-body uk-card-small uk-animation-slide-bottom-medium"
+     *ngFor="let torrent of torrents"
+     (click)="showItemInFolder(torrent.path)">
   <div class="uk-flex">
-    <a href="#" class="uk-margin-small-right" uk-icon="icon: folder" (click)="showItemInFolder(torrent.path)"></a>
+    <a class="uk-margin-small-right" uk-icon="icon: folder"></a>
     <h3 class="uk-card-title uk-margin-remove-bottom uk-margin-remove-top">
       {{ torrent.name }}
     </h3>
@@ -11,33 +12,33 @@
             value="{{ torrent.progress }}" max="1"></progress>
   <ul class="uk-iconnav uk-float-left">
     <li>
-      <a href="#" class="uk-float-left uk-margin-small-right uk-text-success" uk-icon="icon: cloud-download"></a>
-      <span href="" class="uk-text-small uk-float-left uk-text-success">{{ torrent.downloadSpeed | bytes }}</span>
+      <a class="uk-float-left uk-margin-small-right uk-text-success" uk-icon="icon: cloud-download"></a>
+      <span class="uk-text-small uk-float-left uk-text-success">{{ torrent.downloadSpeed | bytes }}</span>
     </li>
     <li>
-      <a href="#" class="uk-float-left uk-margin-small-right uk-text-warning" uk-icon="icon: cloud-upload"></a>
+      <a class="uk-float-left uk-margin-small-right uk-text-warning" uk-icon="icon: cloud-upload"></a>
       <span href="" class="uk-text-small uk-float-left uk-text-warning">{{ torrent.uploadSpeed | bytes }}</span>
     </li>
     <li>
-      <a href="#" class="uk-float-left uk-margin-small-right uk-text-danger" uk-icon="icon: users"></a>
+      <a class="uk-float-left uk-margin-small-right uk-text-danger" uk-icon="icon: users"></a>
       <span href="" class="uk-text-small uk-float-left uk-text-danger">{{ torrent.numPeers }}</span>
     </li>
   </ul>
 
   <ul class="uk-iconnav uk-float-right">
     <li>
-      <a href="#" class="uk-float-left uk-margin-small-right" uk-icon="icon: future"></a>
+      <a class="uk-float-left uk-margin-small-right" uk-icon="icon: future"></a>
       <span href="" class="uk-text-small uk-float-left">{{ torrent.timeRemaining | millisToMinutes }}</span>
     </li>
     <li>
-      <a href="#" class="uk-float-left uk-margin-small-right uk-text-success" uk-icon="icon: database"></a>
+      <a class="uk-float-left uk-margin-small-right uk-text-success" uk-icon="icon: database"></a>
       <span href="" class="uk-text-small uk-float-left uk-text-success">{{ torrent.length | bytes }}</span>
     </li>
     <li>
-      <a href="#"
-         class="uk-float-left uk-margin-small-right uk-text-danger"
-         uk-icon="icon: trash"
-         (click)="removeTorrent(torrent)"></a>
+      <a
+        class="uk-float-left uk-margin-small-right uk-text-danger"
+        uk-icon="icon: trash"
+        (click)="removeTorrent(torrent)"></a>
     </li>
   </ul>
 </div>

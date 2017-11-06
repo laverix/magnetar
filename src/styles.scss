@@ -15,10 +15,10 @@ $card-title-font-size: 14px;
 @import "../node_modules/uikit/src/scss/variables-theme.scss";
 @import "../node_modules/uikit/src/scss/mixins-theme.scss";
 
-// Custom mixin overwrites
-//@mixin hook-card() {
-//  color: #000;
-//}
+@mixin hook-card-hover() {
+  box-shadow: none;
+  background: rgba(44, 62, 80, 0.4);
+}
 
 @import "../node_modules/uikit/src/scss/uikit-theme.scss";
 
@@ -37,12 +37,3 @@ html, body {
 * {
   cursor: default !important;
 }
-
-//
-//.uk-card {
-//  border-top: 1px solid #323A45;
-//}
-//
-//.uk-card:hover {
-//  background: #323A45;
-//}

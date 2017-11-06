@@ -1,4 +1,4 @@
-import { BytesPipe } from './bytes.pipe';
+import {BytesPipe} from './bytes.pipe';
 
 describe('BytesPipe', () => {
   it('create an instance', () => {

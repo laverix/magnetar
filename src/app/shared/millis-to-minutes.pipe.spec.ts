@@ -1,4 +1,4 @@
-import { MillisToMinutesPipe } from './millis-to-minutes.pipe';
+import {MillisToMinutesPipe} from './millis-to-minutes.pipe';
 
 describe('MillisToMinutesPipe', () => {
   it('create an instance', () => {

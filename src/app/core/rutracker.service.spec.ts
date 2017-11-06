@@ -1,6 +1,6 @@
-import { TestBed, inject } from '@angular/core/testing';
+import {TestBed, inject} from '@angular/core/testing';
 
-import { RutrackerService } from './rutracker.service';
+import {RutrackerService} from './rutracker.service';
 
 describe('RutrackerService', () => {
   beforeEach(() => {
