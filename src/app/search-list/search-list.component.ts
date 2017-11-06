@@ -30,8 +30,6 @@ export class SearchListComponent implements OnInit {
       this.webtorrentService.downloadFileFromWriteStream(item.id, stream, () => {
       });
 
-      // this.webtorrentService.seedFile(stream, item.title, () => {});
-
       this.toggleSearchModeEvent.emit(this.searchMode = false);
     });
   }

@@ -33,7 +33,7 @@ export class WebtorrentService {
     });
   }
 
-  seedFile(file, options, callback) {
+  seedFile(file, options?, callback?) {
     return this.webtorrent.seed(file, options, callback);
   }
 

@@ -47,7 +47,7 @@ export class TorrentsListComponent implements OnInit, OnChanges {
         this.webtorrentService.getPeers(options);
 
         torrent.on('done', () => {
-          console.log('Done!');
+          this.webtorrentService.seedFile(torrent);
         });
       });
     }
