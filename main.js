@@ -11,6 +11,8 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true
     },
+    resizable: true,
+    title: 'Mr. Magnet',
     backgroundColor: '#ffffff',
     icon: path.join(__dirname, 'dist/assets/icons/png/64x64.png')
   });
@@ -20,8 +22,6 @@ function createWindow() {
     protocol: 'file:',
     slashes: true
   }));
-
-  win.webContents.openDevTools();
 
   win.on('closed', () => {
     win = null
