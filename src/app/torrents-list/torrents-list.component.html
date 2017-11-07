@@ -1,9 +1,8 @@
 <div class="uk-card uk-card-hover uk-card-body uk-card-small uk-animation-slide-bottom-medium"
-     *ngFor="let torrent of torrents"
-     (click)="showItemInFolder(torrent.path)">
+     *ngFor="let torrent of torrents">
   <div class="uk-flex">
-    <a class="uk-margin-small-right" uk-icon="icon: folder"></a>
-    <h3 class="uk-card-title uk-margin-remove-bottom uk-margin-remove-top">
+    <a class="uk-margin-small-right" uk-icon="icon: folder" (click)="showItemInFolder(torrent.path)"></a>
+    <h3 class="uk-card-title uk-margin-remove-bottom uk-margin-remove-top" (click)="showItemInFolder(torrent.path)">
       {{ torrent.name }}
     </h3>
   </div>
