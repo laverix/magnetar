@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {WebtorrentService} from './webtorrent.service';
 import {RutrackerService} from './rutracker.service';
+import {PersistenceService} from './persistence.service';
 
 @NgModule({
   imports: [
@@ -9,7 +10,8 @@ import {RutrackerService} from './rutracker.service';
   ],
   providers: [
     WebtorrentService,
-    RutrackerService
+    RutrackerService,
+    PersistenceService
   ],
   declarations: []
 })

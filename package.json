@@ -27,6 +27,7 @@
     "bittorrent-protocol": "^2.2.3",
     "bittorrent-tracker": "^9.2.3",
     "core-js": "^2.4.1",
+    "electron-store": "^1.3.0",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "rutracker-api": "^0.2.0",

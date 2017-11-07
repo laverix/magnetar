@@ -35,21 +35,27 @@ export class TorrentsListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (this.torrents) {
-      _.forEach(this.torrents, (torrent, index) => {
-        const options = {
-          infoHash: torrent.infoHash,
-          peerId: torrent.client.peerId,
-          announce: torrent.announce,
-          port: 6881
-        };
-
-        this.webtorrentService.getPeers(options);
-
-        torrent.on('done', () => {
-          this.webtorrentService.seedFile(torrent);
-        });
-      });
-    }
+    // if (this.torrents) {
+    //   if (!this.torrents.client) {
+    //     console.log(
+    //       this.torrents.client
+    //     );
+    //
+    //     _.forEach(this.torrents, (torrent, index) => {
+    //       const options = {
+    //         infoHash: torrent.infoHash,
+    //         peerId: torrent.client.peerId,
+    //         announce: torrent.announce,
+    //         port: 6881
+    //       };
+    //
+    //       this.webtorrentService.getPeers(options);
+    //
+    //       // torrent.on('done', () => {
+    //       //   this.webtorrentService.seedFile(torrent);
+    //       // });
+    //     });
+    //   }
+    // }
   }
 }

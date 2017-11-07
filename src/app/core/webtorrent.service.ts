@@ -33,6 +33,10 @@ export class WebtorrentService {
     });
   }
 
+  addByMagnetURI(url, magnet, callback) {
+    return this.webtorrent.add(url, magnet, callback);
+  }
+
   seedFile(file, options?, callback?) {
     return this.webtorrent.seed(file, options, callback);
   }
