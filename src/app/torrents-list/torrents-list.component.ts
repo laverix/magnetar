@@ -3,6 +3,7 @@ import {WebtorrentService} from '../core/webtorrent.service';
 
 declare const nodeRequire: any;
 import * as _ from 'lodash';
+import {PersistenceService} from '../core/persistence.service';
 
 @Component({
   selector: 'magnet-torrents-list',
@@ -13,7 +14,7 @@ export class TorrentsListComponent implements OnInit, OnChanges {
   @Input() torrents;
   private electron;
 
-  constructor(private webtorrentService: WebtorrentService) {
+  constructor(private webtorrentService: WebtorrentService, private persistenceService: PersistenceService) {
     this.electron = nodeRequire('electron');
   }
 
@@ -24,8 +25,9 @@ export class TorrentsListComponent implements OnInit, OnChanges {
   }
 
   public removeTorrent(torrent) {
+    this.persistenceService.del(torrent.infoHash);
+
     torrent.destroy(() => {
-      console.log('destroyed');
     });
 
     return false;
@@ -35,27 +37,23 @@ export class TorrentsListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    // if (this.torrents) {
-    //   if (!this.torrents.client) {
-    //     console.log(
-    //       this.torrents.client
-    //     );
-    //
-    //     _.forEach(this.torrents, (torrent, index) => {
-    //       const options = {
-    //         infoHash: torrent.infoHash,
-    //         peerId: torrent.client.peerId,
-    //         announce: torrent.announce,
-    //         port: 6881
-    //       };
-    //
-    //       this.webtorrentService.getPeers(options);
-    //
-    //       // torrent.on('done', () => {
-    //       //   this.webtorrentService.seedFile(torrent);
-    //       // });
-    //     });
-    //   }
-    // }
+    if (!this.torrents.length) {
+      return false;
+    }
+
+    _.forEach(this.torrents, (torrent, index) => {
+      if (!torrent.client) {
+        return false;
+      }
+
+      const options = {
+        infoHash: torrent.infoHash,
+        peerId: torrent.client.peerId,
+        announce: torrent.announce,
+        port: 6881
+      };
+
+      this.webtorrentService.getPeers(options);
+    });
   }
 }

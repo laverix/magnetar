@@ -1,5 +1,6 @@
 <div class="uk-card uk-card-hover uk-card-body uk-card-small uk-animation-slide-bottom-medium"
-     *ngFor="let torrent of torrents">
+     *ngFor="let torrent of torrents"
+     [ngClass]="{'uk-disabled': !torrent.length}">
   <div class="uk-flex">
     <a class="uk-margin-small-right" uk-icon="icon: folder" (click)="showItemInFolder(torrent.path)"></a>
     <h3 class="uk-card-title uk-margin-remove-bottom uk-margin-remove-top" (click)="showItemInFolder(torrent.path)">

@@ -10,12 +10,6 @@ export class MillisToMinutesPipe implements PipeTransform {
     const seconds = parseInt(((value % 60000) / 1000).toFixed(0), 10) || 0;
     const expression = seconds < 10 ? '0' : '';
 
-    console.log(
-      minutes,
-      seconds,
-      expression
-    );
-
     return `${!isFinite(minutes) ? 0 : minutes}:${expression}${seconds}`;
   }
 

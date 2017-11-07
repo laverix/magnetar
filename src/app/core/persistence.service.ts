@@ -20,6 +20,10 @@ export class PersistenceService {
     this.store.get(key, value);
   }
 
+  del(key) {
+    this.store.delete(key);
+  }
+
   getStore() {
     return this.store.store;
   }
