@@ -1,26 +1,63 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import 'sanfrancisco-font.css';
 
-$global-font-family: 'Open Sans', sans-serif;
-$global-color: #ecf0f1;
-$global-emphasis-color: #ecf0f1;
-$global-background: #34495e;
+$global-font-family: 'SF Display';
+$global-font-size: 14px;
+$base-body-font-weight: 400;
+
+$global-color: #999999;
+$global-emphasis-color: #999999;
+
+$global-background: #F7F7F7;
 $global-muted-color: #bdc3c7;
 $global-danger-background: #e74c3c;
-$global-success-background: #2ecc71;
+$global-success-background: #1AC703;
 $global-warning-background: #f1c40f;
+$global-primary-background: #0288D6;
 
-$navbar-background: #2c3e50;
-$card-title-font-size: 14px;
+$magnet-hover-bg: #4C91C7;
+$magnet-hover-color: #ffffff;
+$magnet-border: #EAEAEA;
+$magnet-grey: #DFE4E8;
 
-@import "../node_modules/uikit/src/scss/variables-theme.scss";
-@import "../node_modules/uikit/src/scss/mixins-theme.scss";
+$navbar-background: #FFFFFF;
 
-@mixin hook-card-hover() {
-  box-shadow: none;
-  background: rgba(44, 62, 80, 0.4);
+$progress-background: $magnet-grey;
+
+$card-title-font-size: $global-font-size;
+$card-hover-background: $magnet-hover-bg;
+$card-default-background: $global-background;
+
+@import '../node_modules/uikit/src/scss/variables-theme.scss';
+@import '../node_modules/uikit/src/scss/mixins-theme.scss';
+
+.uk-disabled {
+  progress[value]::-webkit-progress-bar {
+    background-color: $global-muted-color;
+  }
 }
 
-@import "../node_modules/uikit/src/scss/uikit-theme.scss";
+@mixin hook-progress-bar() {
+  background-color: $magnet-hover-bg;
+}
+
+@mixin hook-card-hover() {
+  box-shadow: $global-medium-box-shadow;
+
+  .uk-card-title, a, span {
+    color: $magnet-hover-color !important;
+  }
+
+  progress[value]::-webkit-progress-value {
+    background-color: $magnet-grey;
+  }
+}
+
+@mixin hook-card-body() {
+  border-bottom: 1px solid $magnet-border;
+}
+
+@import '../node_modules/uikit/src/scss/uikit-theme.scss';
 
 html, body {
   -webkit-font-feature-settings: 'liga';
@@ -35,5 +72,6 @@ html, body {
 }
 
 * {
+  letter-spacing: 0.4px;
   cursor: default !important;
 }
