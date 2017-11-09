@@ -1,60 +1,56 @@
-//@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-@import 'sanfrancisco-font.css';
+@import "assets/font";
 
-$global-font-family: 'SF Display';
+$global-font-family: 'SF Text', 'SF Display', 'SF Mono';
 $global-font-size: 14px;
 $base-body-font-weight: 400;
 
-$global-color: #999999;
-$global-emphasis-color: #999999;
+$global-background: #FFFFFF;
+$navbar-background: linear-gradient(-180deg, #F9F8F9 0%, #E4E6E8 100%);
 
-$global-background: #F7F7F7;
-$global-muted-color: #bdc3c7;
-$global-danger-background: #e74c3c;
+$global-color: #827F7F;
+$global-emphasis-color: #4A4A4A;
+
+$global-muted-color: #6C6B6B;
+$global-primary-background: #008cf5;
+$global-danger-background: #ff0457;
 $global-success-background: #1AC703;
 $global-warning-background: #f1c40f;
-$global-primary-background: #0288D6;
 
-$magnet-hover-bg: #4C91C7;
-$magnet-hover-color: #ffffff;
-$magnet-border: #EAEAEA;
-$magnet-grey: #DFE4E8;
-
-$navbar-background: #FFFFFF;
-
-$progress-background: $magnet-grey;
+$magnet-grey: #E3E0E0;
 
 $card-title-font-size: $global-font-size;
-$card-hover-background: $magnet-hover-bg;
 $card-default-background: $global-background;
+$card-hover-background: #F9F8F9;
+
+$progress-background: $magnet-grey;
 
 @import '../node_modules/uikit/src/scss/variables-theme.scss';
 @import '../node_modules/uikit/src/scss/mixins-theme.scss';
 
 .uk-disabled {
   progress[value]::-webkit-progress-bar {
-    background-color: $global-muted-color;
-  }
-}
-
-@mixin hook-progress-bar() {
-  background-color: $magnet-hover-bg;
-}
-
-@mixin hook-card-hover() {
-  box-shadow: $global-medium-box-shadow;
-
-  .uk-card-title, a, span {
-    color: $magnet-hover-color !important;
-  }
-
-  progress[value]::-webkit-progress-value {
-    background-color: $magnet-grey;
+    background-color: $global-danger-background;
   }
 }
 
 @mixin hook-card-body() {
-  border-bottom: 1px solid $magnet-border;
+  border-bottom: 1px solid $magnet-grey;
+}
+
+@mixin hook-progress-bar() {
+  background-color: $global-primary-background;
+}
+
+@mixin hook-card-hover() {
+  box-shadow: none;
+
+  //.uk-card-title, a, span {
+  //  color: $magnet-hover-color !important;
+  //}
+
+  //progress[value]::-webkit-progress-value {
+  //  background-color: $magnet-grey;
+  //}
 }
 
 @import '../node_modules/uikit/src/scss/uikit-theme.scss';
@@ -72,6 +68,5 @@ html, body {
 }
 
 * {
-  letter-spacing: 0.4px;
   cursor: default !important;
 }

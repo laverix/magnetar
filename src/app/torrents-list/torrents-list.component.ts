@@ -53,6 +53,10 @@ export class TorrentsListComponent implements OnInit, OnChanges {
         port: 6881
       };
 
+      console.log(
+        this.torrents
+      )
+
       this.webtorrentService.getPeers(options);
     });
   }
