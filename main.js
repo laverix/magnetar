@@ -6,12 +6,12 @@ let win;
 
 function createWindow() {
   win = new BrowserWindow({
-    width: 950,
-    height: 620,
-    maxWidth: 950,
-    maxHeight: 620,
     minWidth: 722,
     minHeight: 434,
+    maxWidth: 950,
+    maxHeight: 620,
+    width: 722,
+    height: 434,
     webPreferences: {
       nodeIntegration: true
     },
