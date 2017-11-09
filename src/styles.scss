@@ -17,10 +17,10 @@ $global-success-background: #1AC703;
 $global-warning-background: #f1c40f;
 
 $magnet-grey: #E3E0E0;
+$magnet-disabled: #F9F8F9;
 
 $card-title-font-size: $global-font-size;
 $card-default-background: $global-background;
-$card-hover-background: #F9F8F9;
 
 $progress-background: $magnet-grey;
 
@@ -30,6 +30,10 @@ $progress-background: $magnet-grey;
 .uk-disabled {
   progress[value]::-webkit-progress-bar {
     background-color: $global-danger-background;
+  }
+
+  &.uk-card-body {
+    background: $magnet-disabled;
   }
 }
 
@@ -43,14 +47,6 @@ $progress-background: $magnet-grey;
 
 @mixin hook-card-hover() {
   box-shadow: none;
-
-  //.uk-card-title, a, span {
-  //  color: $magnet-hover-color !important;
-  //}
-
-  //progress[value]::-webkit-progress-value {
-  //  background-color: $magnet-grey;
-  //}
 }
 
 @import '../node_modules/uikit/src/scss/uikit-theme.scss';
