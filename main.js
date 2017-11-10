@@ -16,7 +16,7 @@ function createWindow() {
       nodeIntegration: true
     },
     resizable: true,
-    title: 'Mr. Magnet',
+    title: 'Magnetar',
     backgroundColor: '#ffffff',
     icon: path.join(__dirname, 'dist/assets/icons/png/64x64.png')
   });

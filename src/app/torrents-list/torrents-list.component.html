@@ -9,7 +9,7 @@
     <li *ngIf="!torrent.done">
       <div uk-spinner="ratio: 0.5" style="line-height: 100%"></div>
     </li>
-    <li>
+    <li class="ellipsis">
       <h3 class="uk-card-title uk-margin-remove-bottom uk-margin-remove-top" (click)="showItemInFolder(torrent.path)">
         {{ torrent.name }}
       </h3>
