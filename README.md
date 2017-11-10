@@ -1,9 +1,14 @@
-# Magnetar
-Yet another torrent client for Windows, Mac and Linux
+<h1 align="center">
+  <br>
+  <img src="src/assets/logo.svg" alt="Magnetar" width="200">
+  <br>
+  Magnetar
+  <br>
+  <br>
+</h1>
 
-<p align="center">
-  <img src="src/assets/logo.svg" width="200" height="200">
-</p>
+<h4 align="center">Yet another torrent client for Windows, Mac and Linux</h4>
+
 
 <p align="center">
   <img src="src/assets/cover.png">
