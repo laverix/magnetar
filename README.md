@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-<h4 align="center">Yet another torrent client for Windows, Mac and Linux</h4>
+<h4 align="center">⚡️ Yet another torrent client for Windows, Mac and Linux</h4>
 
 
 <p align="center">
