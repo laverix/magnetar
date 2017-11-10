@@ -1,0 +1,28 @@
+<div class="uk-flex uk-flex-center uk-margin-xlarge-top" *ngIf="!searchResult.length">
+  <div uk-spinner></div>
+</div>
+
+<div class="uk-card uk-card-hover uk-card-body uk-card-small uk-animation-slide-bottom-medium"
+     *ngFor="let item of searchResult"
+     (click)="download(item)">
+  <h3 class="uk-card-title">
+    {{ item.title }}
+  </h3>
+  <ul class="uk-iconnav uk-float-left">
+    <li>
+      <a class="uk-float-left uk-margin-small-right uk-text-success" uk-icon="icon: users"></a>
+      <span href="" class="uk-text-small uk-float-left uk-text-success">{{ item.seeds }}</span>
+    </li>
+    <li>
+      <a class="uk-float-left uk-margin-small-right" uk-icon="icon: users"></a>
+      <span href="" class="uk-text-small uk-float-left">{{ item.leechs }}</span>
+    </li>
+    <li>
+      <a class="uk-float-left uk-margin-small-right" uk-icon="icon: database"></a>
+      <span href="" class="uk-text-small uk-float-left">{{ item.size }}</span>
+    </li>
+  </ul>
+  <!--<ul class="uk-iconnav uk-float-right">-->
+
+  <!--</ul>-->
+</div>

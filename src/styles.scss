@@ -1,0 +1,68 @@
+@import "assets/font";
+
+$global-font-family: 'SF Text', 'SF Display', 'SF Mono';
+$global-font-size: 14px;
+$base-body-font-weight: 400;
+
+$global-background: #FFFFFF;
+$navbar-background: linear-gradient(-180deg, #F9F8F9 0%, #E4E6E8 100%);
+
+$global-color: #827F7F;
+$global-emphasis-color: #4A4A4A;
+
+$global-muted-color: #6C6B6B;
+$global-primary-background: #008cf5;
+$global-danger-background: #ff0457;
+$global-success-background: #1AC703;
+$global-warning-background: #f1c40f;
+
+$magnet-grey: #E3E0E0;
+$magnet-disabled: #F9F8F9;
+
+$card-title-font-size: $global-font-size;
+$card-default-background: $global-background;
+
+$progress-background: $magnet-grey;
+
+@import '../node_modules/uikit/src/scss/variables-theme.scss';
+@import '../node_modules/uikit/src/scss/mixins-theme.scss';
+
+.uk-disabled {
+  progress[value]::-webkit-progress-bar {
+    background-color: $global-danger-background;
+  }
+
+  &.uk-card-body {
+    background: $magnet-disabled;
+  }
+}
+
+@mixin hook-card-body() {
+  border-bottom: 1px solid $magnet-grey;
+}
+
+@mixin hook-progress-bar() {
+  background-color: $global-primary-background;
+}
+
+@mixin hook-card-hover() {
+  box-shadow: none;
+}
+
+@import '../node_modules/uikit/src/scss/uikit-theme.scss';
+
+html, body {
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+* {
+  cursor: default !important;
+}

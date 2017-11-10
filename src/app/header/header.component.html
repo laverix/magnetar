@@ -1,0 +1,47 @@
+<nav class="uk-navbar-container" uk-navbar>
+  <div class="uk-navbar-center">
+    <a class="uk-navbar-item uk-logo uk-padding-small" routerLink="/">
+      <img src="./assets/logo.svg" class="uk-responsive-height" height="30" alt="">
+    </a>
+  </div>
+  <div class="uk-navbar-left">
+    <ul class="uk-navbar-nav">
+      <li>
+        <a href="#modal-about" uk-toggle>
+          <span class="uk-icon uk-margin-small-right" uk-icon="icon: info"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="uk-navbar-right">
+    <ul class="uk-navbar-nav">
+      <li *ngIf="searchMode">
+        <a (click)="toggleSearchMode()">
+          <span class="uk-icon uk-margin-small-right" uk-icon="icon: list"></span>
+        </a>
+      </li>
+      <li *ngIf="!searchMode">
+        <a href="#search-modal" uk-toggle>
+          <span class="uk-icon uk-margin-small-right" uk-icon="icon: search"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div id="modal-about" class="uk-flex-top" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+    <button class="uk-modal-close-default" type="button" uk-close></button>
+    <div class="uk-panel">
+      <img class="uk-align-left uk-margin-remove-adjacent"
+           width="200"
+           height="auto"
+           src="./assets/logo.svg"
+           alt="Example image">
+      <h1>Magnetar</h1>
+      <small>Version 1.0</small>
+      <p>⚡️ Yet another torrent client for Windows, Mac and Linux</p>
+      <small>© 2015-2017 Valery Lyatsevich</small>
+    </div>
+  </div>
+</div>
