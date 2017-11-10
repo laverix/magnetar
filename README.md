@@ -2,7 +2,7 @@
 Yet another torrent client for Windows, Mac and Linux
 
 <p align="center">
-  <img src="src/assets/logo.svg">
+  <img src="src/assets/logo.svg" width="200" height="200">
 </p>
 
 <p align="center">
