@@ -1,7 +1,13 @@
 # Magnetar
 Yet another torrent client for Windows, Mac and Linux
 
-![](app/img/cover.png)
+<p align="center">
+  <img src="src/assets/logo.svg">
+</p>
+
+<p align="center">
+  <img src="src/assets/cover.png">
+</p>
 
 ## Installation
 ```bash
