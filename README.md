@@ -14,6 +14,24 @@
   <img src="src/assets/cover.png">
 </p>
 
+<h3 align="center">
+  <br/>
+  <span>Download</span>
+  <br/>
+  <br/>
+</h3>
+
+<h4 align="center">
+  <a href="https://github.com/laverix/magnetar/raw/master/release-builds/Magnetar.dmg">Mac OS X</a>
+  <br/>
+</h4>
+
+<h4 align="center">
+  <a href="https://github.com/laverix/magnetar/raw/master/release-builds/magnetar_1.0.0_amd64.deb">Ubuntu</a>
+  <br/>
+  <br/>
+</h4>
+
 ## Installation
 
 Please read the [prerequisites](#prerequisites)
